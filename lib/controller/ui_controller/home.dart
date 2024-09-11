@@ -36,20 +36,25 @@ class HomeController extends GetxController {
           textColor: Colors.white,
           fontSize: 15,
         );
-      }else if(result.status!.toLowerCase()=="closed"){
-        Fluttertoast.showToast(msg: "SDK Closed by User",
-        toastLength: Toast.LENGTH_SHORT,
+      } else if (result.status!.toLowerCase() == "closed") {
+        Fluttertoast.showToast(
+          msg: "SDK Closed by User",
+          toastLength: Toast.LENGTH_SHORT,
           gravity: ToastGravity.CENTER,
           timeInSecForIosWeb: 1,
           backgroundColor: Colors.blue,
           textColor: Colors.white,
           fontSize: 15,
         );
-      }else{
-        Fluttertoast.showToast(msg: "Transaction is ${result.status} and amount is ${result.amount}",
-        toastLength: Toast.LENGTH_SHORT,
+      } else {
+        Fluttertoast.showToast(
+          msg: "Transaction is ${result.status} and amount is ${result.amount}",
+          toastLength: Toast.LENGTH_SHORT,
           gravity: ToastGravity.CENTER,
-        timeInSecForIosWeb: 1,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.blue,
+          textColor: Colors.white,
+          fontSize: 15,
         );
       }
     } catch (e) {
