@@ -33,8 +33,16 @@ class HomeController extends GetxController {
           gravity: ToastGravity.CENTER,
           timeInSecForIosWeb: 1,
           backgroundColor: Colors.blue,
-          textColor: Colors.black,
+          textColor: Colors.white,
           fontSize: 15,
+        );
+      }else if(result.status!.toLowerCase()=="closed"){
+        Fluttertoast.showToast(msg: "SDK Closed by User",
+        toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.blue,
+          textColor: Colors.white
         );
       }
     } catch (e) {
