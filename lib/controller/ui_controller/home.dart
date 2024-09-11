@@ -42,7 +42,14 @@ class HomeController extends GetxController {
           gravity: ToastGravity.CENTER,
           timeInSecForIosWeb: 1,
           backgroundColor: Colors.blue,
-          textColor: Colors.white
+          textColor: Colors.white,
+          fontSize: 15,
+        );
+      }else{
+        Fluttertoast.showToast(msg: "Transaction is ${result.status} and amount is ${result.amount}",
+        toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
         );
       }
     } catch (e) {
