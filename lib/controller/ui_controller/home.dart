@@ -1,10 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_sslcommerz/model/SSLCSdkType.dart';
 import 'package:flutter_sslcommerz/model/SSLCTransactionInfoModel.dart';
 import 'package:flutter_sslcommerz/model/SSLCommerzInitialization.dart';
 import 'package:flutter_sslcommerz/model/SSLCurrencyType.dart';
 import 'package:flutter_sslcommerz/sslcommerz.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
@@ -26,11 +26,17 @@ class HomeController extends GetxController {
     try {
       SSLCTransactionInfoModel result = await sslcommerz.payNow();
 
-      if(result.status!.toLowerCase()== "failed"){
-        Fluttertoast.showToast()
-
+      if (result.status!.toLowerCase() == "failed") {
+        Fluttertoast.showToast(
+          msg: "transaction failed....",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.blue,
+          textColor: Colors.black,
+          fontSize: 15,
+        );
       }
-
     } catch (e) {
       debugPrint(e.toString());
     }
