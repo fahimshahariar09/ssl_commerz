@@ -10,6 +10,16 @@ class Home extends StatelessWidget {
         title: Text("Ssl Commerz"),
         centerTitle: true,
       ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(onPressed: (){
+              debugPrint("dfghj");
+            }, child: Text("PAY NOW"))
+          ],
+        ),
+      ),
     );
   }
 }
